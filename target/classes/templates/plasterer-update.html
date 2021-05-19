@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Plasterer</title>
+</head>
+<body>
+<form action="#" th:action="@{/plasterer-update}" th:object="${plasterer}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="chemistryLvl">Chemistry Level</label>
+    <input type="text" th:field="*{chemistryLvl}" id="chemistryLvl" placeholder="Chemistry Level">
+    <br>
+    <label for="experienceOfFacing">Experience Of Facing</label>
+    <input type="text" th:field="*{experienceOfFacing}" id="experienceOfFacing" placeholder="Experience Of Facing">
+    <br>
+    <input type="submit" value="Update Plasterer">
+</form>
+</body>
+</html>

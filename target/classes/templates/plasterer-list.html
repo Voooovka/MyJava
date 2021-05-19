@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Plasterers</title>
+</head>
+<body>
+<div th:switch="${plasterers}">
+    <h2 th:case="null">No plasterer found!</h2>
+    <div th:case="*">
+        <h2>Plasterers</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Chemistry Level</th>
+                <th>Experience Of Facing</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="plasterer : ${plasterers}">
+                <td th:text="${plasterer.id}"></td>
+                <td th:text="${plasterer.chemistryLvl}"></td>
+                <td th:text="${plasterer.experienceOfFacing}"></td>
+                <td><a th:href="@{plasterer-update/{id}(id=${plasterer.id})}">Edit</a></td>
+                <td><a th:href="@{plasterer-delete/{id}(id=${plasterer.id})}">Delete</a></td>
+                <td><a th:href="@{plasterer/{id}(id=${plasterer.id})}">Get</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/plasterer-create">Create plasterer</a></p>
+</div>
+</body>
+</html>
