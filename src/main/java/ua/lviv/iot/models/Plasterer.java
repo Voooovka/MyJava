@@ -2,24 +2,22 @@ package ua.lviv.iot.models;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import ua.lviv.iot.enums.Education;
-import ua.lviv.iot.enums.Place;
-import ua.lviv.iot.enums.LevelChemistry;
+import javax.persistence.*;
 
-@Data
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
+@Data
+@Entity
+@Table(name = "plasterers")
 public class Plasterer extends ConstractionProfessions {
-    private LevelChemistry chemistryLvl;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "chemistry_lvl")
+    private String chemistryLvl;
+
+    @Column(name = "experience_of_facing")
     private float experienceOfFacing;
-
-    public Plasterer(){}
-
-    public Plasterer(double avgSalary, Education education, String instruments, Place place, LevelChemistry chemistryLvl, float experienceOfFacing) {
-        super(avgSalary, education, instruments, place);
-        this.chemistryLvl = chemistryLvl;
-        this.experienceOfFacing = experienceOfFacing;
-    }
 
 }

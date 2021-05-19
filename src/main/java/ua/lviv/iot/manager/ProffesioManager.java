@@ -6,8 +6,6 @@ import ua.lviv.iot.enums.Place;
 import ua.lviv.iot.models.ConstractionProfessions;
 import ua.lviv.iot.enums.SortOrder;
 
-
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -18,8 +16,8 @@ public final class ProffesioManager {
 
     public List<ConstractionProfessions> constractionProfessions = new ArrayList<>();
 
-    public final void addDevice(ConstractionProfessions ConstractionProfession) {
-        this.constractionProfessions.add(ConstractionProfession);
+    public void addDevice(ConstractionProfessions constractionProfession) {
+        this.constractionProfessions.add(constractionProfession);
     }
 
     public List<ConstractionProfessions> searchByPlace(Place place) {
